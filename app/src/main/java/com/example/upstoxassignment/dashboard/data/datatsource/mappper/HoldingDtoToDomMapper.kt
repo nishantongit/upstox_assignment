@@ -1,4 +1,4 @@
-package com.example.upstoxassignment.dashboard.data.datatsource.local.mappper
+package com.example.upstoxassignment.dashboard.data.datatsource.mappper
 
 import com.example.upstoxassignment.dashboard.data.entities.local.DataDom
 import com.example.upstoxassignment.dashboard.data.entities.local.HoldingsDom

@@ -2,9 +2,9 @@ package com.example.upstoxassignment.dashboard.data.repository
 
 import com.example.upstoxassignment.base.network.NetworkResult
 import com.example.upstoxassignment.dashboard.data.datatsource.local.HoldingsLDS
-import com.example.upstoxassignment.dashboard.data.datatsource.local.mappper.HoldingDtoToDomMapper
-import com.example.upstoxassignment.dashboard.data.datatsource.local.mappper.HoldingDtoToEntMapper
-import com.example.upstoxassignment.dashboard.data.datatsource.local.mappper.HoldingEntToDomMapper
+import com.example.upstoxassignment.dashboard.data.datatsource.mappper.HoldingDtoToDomMapper
+import com.example.upstoxassignment.dashboard.data.datatsource.mappper.HoldingDtoToEntMapper
+import com.example.upstoxassignment.dashboard.data.datatsource.mappper.HoldingEntToDomMapper
 import com.example.upstoxassignment.dashboard.data.datatsource.remote.HoldingsRDS
 import com.example.upstoxassignment.dashboard.data.entities.local.DataDom
 import com.example.upstoxassignment.dashboard.domain.repository.HoldingsRepository
