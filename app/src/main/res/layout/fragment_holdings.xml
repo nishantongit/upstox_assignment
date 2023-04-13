@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".dashboard.presentation.ui.view.HoldingsFragment">
+
+    <data>
+
+        <variable
+            name="vm"
+            type="com.example.upstoxassignment.dashboard.presentation.ui.viewmodel.HoldingsViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/holding_rv"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toTopOf="@id/summary_footer"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:listitem="@layout/holding_item" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/summary_footer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            >
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:background="#B8D8F3">
+
+                <TextView
+                    android:id="@+id/current_value_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/holding_summary_item_space"
+                    android:text="Current value : "
+                    app:layout_constraintBottom_toTopOf="@id/total_investment_label"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/total_investment_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/holding_summary_item_space"
+                    android:text="Total investment : "
+                    app:layout_constraintBottom_toTopOf="@id/todays_profit_loss_label"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/todays_profit_loss_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:text="Today's profit &amp; loss: "
+                    app:layout_constraintBottom_toTopOf="@id/profit_loss_label"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/profit_loss_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Profit &amp; Loss : "
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+
+                <TextView
+                    android:id="@+id/current_value_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{vm.totalCurrentValueObservable}"
+                    app:layout_constraintBottom_toBottomOf="@id/current_value_label"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/current_value_label" />
+
+                <TextView
+                    android:id="@+id/total_investment_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{vm.totalInvestmentObservable}"
+                    app:layout_constraintBottom_toBottomOf="@id/total_investment_label"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/total_investment_label" />
+
+                <TextView
+                    android:id="@+id/todays_profit_loss_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{vm.todayProfitLossObservable}"
+                    app:layout_constraintBottom_toBottomOf="@id/todays_profit_loss_label"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/todays_profit_loss_label" />
+
+                <TextView
+                    android:id="@+id/profit_loss_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{vm.profitAndLossObservable}"
+                    app:layout_constraintBottom_toBottomOf="@id/profit_loss_label"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/profit_loss_label" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
